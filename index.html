@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="./src/css/modal.css">
+    <link rel="stylesheet" href="./src/css/responsive.css">
+    <link rel="shortcut icon" href="./src/image/favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Loja de Pimenta</title>
+</head>
+
+<body>
+
+    <header class="header">
+            <a href="#" target="_blank" class="logo">
+                <img class="imagem" src="./src/image/red.png" alt="imagem logo">
+                <h1>Pimentas França</h1>
+            </a>
+
+        <nav>
+            <ol class="lista">  
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#produtos">PRODUTOS</a></li>
+                <li><a href="./src/image/certificado1.jpg" target="_blank">SOBRE</a></li>
+                <li><a href="#contato">CONTATO</a></li>
+                <li>
+                    <a href="javascript:void(0)" class="cart-icon" onclick="abrirCarrinho()">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="cart-count">0</span>
+                    </a>
+                </li>
+            </ol>
+        </nav>
+    </header>
+
+
+    <section id="home">
+        <div class="carousel-container">
+            <div class="carousel">
+                <img src="./src/image/p12.jpg"
+                    alt="Molho de Pimenta">
+                <img src="./src/image/p0.jpg"
+                    alt="Pimenta Habanero">
+                <img src="./src/image/IMG-20240810-WA0002.jpg"
+                    alt="Pimenta Jalapeno">
+                <img src="./src/image/p1.jpg"
+                    alt="Molho de Pimenta">
+                <img src="./src/image/p3.jpeg"
+                    alt="Molho de Pimenta">
+                <img src="./src/image/p6.jpeg"
+                    alt="Molho de Pimenta">
+                <img src="./src/image/pimenta2.jpeg"
+                    alt="Molho de Pimenta">
+                <img src="./src/image/p8.jpg"
+                    alt="Molho de Pimenta">
+                <img src="./src/image/p9.jpg"
+                    alt="Molho de Pimenta">
+                <img src="./src/image/p10.jpg"
+                    alt="Molho de Pimenta">
+                <img src="./src/image/p11.jpg"
+                    alt="Molho de Pimenta">
+                <img src="./src/image/p4.jpeg"
+                    alt="Molho de Pimenta">
+            </div>
+            <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
+            <button class="next" onclick="plusSlides(1)">&#10095;</button>
+        </div>
+
+    </section>
+
+
+    <section id="produtos" class="produtos">
+        <h2>Molho de Pimentas</h2>
+        <div class="produto-lista">
+            <div class="produto">
+                <img src="./src/image/carolina reaper.jpeg" alt="Pimenta Carolina Reaper">
+                <h3>Carolina Reaper</h3>
+                <p>A mais ardida do mundo,maravilhosamente picante</p>
+                <p class="preco">R$ 11,50</p>
+                <button class="btn" onclick="adicionarAoCarrinho('Pimenta Carolina Reaper', 11.50)">Comprar</button>
+            </div>
+
+            <div class="produto">
+                <img src="./src/image/Red-Ember-Cayenne.jpg" alt="Pimenta Malagueta">
+                <h3>Malagueta</h3>
+                <p>A qualidade picante de certas variedades de Capsicum</p>
+                <p class="preco">R$ 10,00</p>
+                <button class="btn" onclick="adicionarAoCarrinho('Pimenta Malagueta', 10)">Comprar</button>
+            </div>
+
+            <div class="produto">
+                <img src="./src/image/dedo-moca.jpeg" alt="Pimenta dedo de moça">
+                <h3>Dedo de Moça</h3>
+                <p>A pimenta vermelha é um dos temperos mais utilizados na nossa culinária</p>
+                <p class="preco">R$ 10,00</p>
+                <button class="btn" onclick="adicionarAoCarrinho('Pimenta Dedo de Moça', 10)">Comprar</button>
+            </div>
+
+            <div class="produto">
+                <img src="./src/image/scorpion.png" alt="Pimenta scorpion">
+                <h3>Scorpion</h3>
+                <p>Trinidad Scorpion auxilia no emagrecimento,aumenta o metabolismo do corpo,a  segunda mais picante do mundo não é para amadores</p>
+                <p class="preco">R$ 12,00</p>
+                <button class="btn" onclick="adicionarAoCarrinho('Pimenta Scorpion', 12.00)">Comprar</button>
+            </div>
+        </div>
+    </section>
+
+
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharCarrinho()">&times;</span>
+            <h2 class="titulo-carrinho">Seu Carrinho</h2>
+            <ol id="cart-items"></ol>
+            <p id="cart-total"></p>
+        </div>
+    </div>
+
+
+    <footer id="contato">
+        <div class="footer-content">
+            <div class="address">
+                <h3>Nosso Endereço :</h3><br>
+                <p>Rua Ely Corrêa-Bairro Vila Imperial</p>
+                <p>Gravatai RS</p>
+                <p class="fone">WhatsApp Comercial: (51)99532-1521</p>
+                <p>CEP: 94198-312</p><br>
+                <a href="./src/pdf/Tabela de Ardência .pdf" class="meu-linke" target="_blank">Click aqui e pegue seu presente</a>
+            </div>
+
+            <div class="social-media">
+                <h3>Siga-nos</h3>
+                <a href="https://www.facebook.com/profile.php?id=61560319498111" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/pimentasfranca/?hl=pt-br" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://web.whatsapp.com/" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://www.youtube.com/watch?v=LtCTm7GJqow" target="_blank"><i class="fab fa-youtube"></i></a>
+
+                <p class="criador-site selecionar">Criador do site : <span>Rafael Silveira</span></p>
+                <p class="criador-site">Contato <span>WhatsApp:(51)98935-4498</span></p>
+            </div>
+            
+        </div>
+
+        <div class="footer-bottom">
+            <p><a href="#home">Pimentasfranca@gmail.com</a></p>
+            <p>&copy; 2024 Loja de Pimenta. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="./src/js/index.js"></script>
+
+</body>
+</html>
